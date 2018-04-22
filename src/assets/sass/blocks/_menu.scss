@@ -1,0 +1,30 @@
+.menu{
+  height:100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__main{
+    height: 252px;
+    width: 452px;
+    border-radius: 1em;
+    border: 1px solid cc(ghost);
+    position: relative;
+    background: cc(bg);
+    &--overlay{
+      border-radius: 1em;
+      height:100%;
+      width: 100%;
+      background: cc(overlay, .2);
+
+    }
+    &--header{
+      @extend %ff__FiraMono--700;
+      color: cc(ghost);
+      padding: .5em;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
