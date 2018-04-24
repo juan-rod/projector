@@ -6,7 +6,9 @@
        <p>JUAN [RODRIGUEZ]</p>
        <p>TWENTY18</p>
       </div>
-      <div class="menu__main--body"></div>
+      <div class="menu__main--body">
+        <the-nav></the-nav>
+      </div>
       </div>
     </div>
     <div class="menu__nav">
@@ -16,7 +18,10 @@
 </template>
 
 <script>
+import TheNav from './Navigation.vue'
 export default {
+  name: 'Menu',
+  components:{ TheNav }
 
 }
 </script>

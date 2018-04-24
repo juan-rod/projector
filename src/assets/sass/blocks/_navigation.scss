@@ -1,0 +1,18 @@
+.navigation{
+    height: 100%;
+    // border: 1px solid pink;
+    width: 33%;
+    position: absolute;
+    left: -36px;
+  &__container{
+    height: 50px;
+    background: cc(txt, 0.6);
+    color: cc(ghost);
+    border-radius: .8em;
+    width: 100%;
+    border: 1px solid rgba(113, 111, 115, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
