@@ -13,6 +13,7 @@
   .square{
     border:1px solid cc(ghost);
     display: flex;
+    // @include dramaShadow;
     // height:50%;
     // width:50%;
     &.top-right{
@@ -37,7 +38,10 @@
       width: 156px;
     }
   }
-  
+  .dramatic__shadow{
+    @include dramaShadow;
+
+  }
   .circle--lg{
     position: absolute;
     border:1px solid cc(ghost);
@@ -49,5 +53,9 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    // @include dramaShadow;
   }
+  canvas {
+    background: radial-gradient(white, silver);  
+}
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
     <div class="navigation__container" v-for="nav in navlinks" :key="nav.id">
-      <p>{{nav.name}}</p>
+      <router-link :to="nav.link" active-class="nav__active" exact><p>{{nav.name}}</p> </router-link>
     </div>
   </div>
 </template>
@@ -14,19 +14,19 @@ export default {
       navlinks: [
         {
           name : "Home",
-          link : ''
+          link : '/'
         },
          {
           name : "About",
-          link : ''
+          link : '/about'
         },
          {
           name : "Now",
-          link : ''
+          link : '/now'
         },
          {
-          name : "Blog",
-          link : ''
+          name : "Projects",
+          link : '/projects'
         }
       ]
     }
