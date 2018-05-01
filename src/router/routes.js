@@ -12,8 +12,8 @@ export const routes = [
 		children:[
 			// {path: '', component: HomeView},
 			{path: '/about', component: About},
-			{path: '/projects', component: Projects},
-			{path: '/now', component: Now}
+			{path: '/now', component: Now},
+			{path: '/projects', component: Projects}
 			// {path: '/timeline', component: Timeline}
 		]
 	}

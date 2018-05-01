@@ -27,42 +27,55 @@ export default {
   components: { TheMenu },
   data () {
     return{
-      items: []
+      paths: [],
+      currentPath: ''
     }
   },
   created (){
     window.addEventListener('keyup', this.keyNavigation)
   },
   mounted () {
-    this.createCanvas()
-    this.$router.options.routes.forEach(route => {
-      console.log('route:',route)
-      
-            // this.items.push({
-            //     name: route.name
-            //     , path: route.path
-            // })
-        })
+    // this.createCanvas()
+    this.getRoutes()
   },
   beforeRouteUpdate (to, from, next) {
-    console.log('to:',to)
-    console.log('from:',from)
-    console.log('next:',next)
+    // console.log('to:',to)
+    // console.log('from:',from)
+    // console.log('next:',next)
     next()
-    // react to route changes...
-    // don't forget to call next()
+  },
+  watch:{
+    $route (to, from){
+      let path = to.path
+          path = path = path.replace(/\//g, '')
+     return this.currentPath = path
+    }
   },
   methods: {
     keyNavigation (e){
       let keyPressed = e.which
-      this.$router.push({ path: '/about' })
-      // this.$router.options.routes.forEach(route => {
-      //       this.items.push({
-      //           name: route.name
-      //           , path: route.path
-      //       })
-      //   })
+      console.log('this.currentPath ',this.currentPath )
+      //keypress 37 = right arrow
+      //keypress 38 = up arrow
+      //keypress 39 = left arrow
+      //keypress 40 = down arrow
+
+      console.log('keyPressed:',keyPressed)
+      console.log('this.paths:',this.paths)
+      if (keyPressed) {
+        if(this.currentPath === '') this.$router.push({path: this.paths[0].path})
+        if(this.currentPath === 'about') this.$router.push({path: this.paths[1].path})
+        if(this.currentPath === 'now') this.$router.push({path: this.paths[2].path})
+        if(this.currentPath === 'projects') this.$router.push({path: '/'})
+      }
       
+    },
+    getRoutes () {
+      this.$router.options.routes[0].children.forEach(route => {
+        this.paths.push({
+          path: route.path
+        })
+      })
     },
     createCanvas () {
       var canvas, context, width, height;
