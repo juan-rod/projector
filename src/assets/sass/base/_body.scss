@@ -2,8 +2,7 @@ body {
     @extend %txt--body;
     color: cc(txt);
     background-color: cc(bg);
-//   case#: ca137732453
-//   confirmation #: njr71622352
+
     ::selection {
       background-color: cc(selection);
     }
